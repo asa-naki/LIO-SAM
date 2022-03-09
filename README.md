@@ -69,12 +69,12 @@ In these tests, the IMU was mounted on the bottom of the lidar such that their x
 
 ## Dependencies
 
-- [ROS2](https://docs.ros.org/en/foxy/Installation.html) (tested with Foxy on Ubuntu 20.04)
+- [ROS2](https://docs.ros.org/en/galactic/Installation.html) (tested with galactc on Ubuntu 20.04)
   ```
-  sudo apt install ros-foxy-perception-pcl \
-                   ros-foxy-pcl-msgs \
-                   ros-foxy-vision-opencv \
-                   ros-foxy-xacro
+  sudo apt install ros-galactic-perception-pcl \
+                   ros-galactic-pcl-msgs \
+                   ros-galactic-vision-opencv \
+                   ros-galactic-xacro
   ```
 - [gtsam](https://github.com/borglab/gtsam/releases) (Georgia Tech Smoothing and Mapping library)
   ```
@@ -86,15 +86,17 @@ In these tests, the IMU was mounted on the bottom of the lidar such that their x
 ## Install
 
 Use the following commands to download and compile the package.
+In my environment, when I built with the ROS2 branch, find_package(PCL REQUIRED) outputs boost not found, so I fixed it. If you try it in your environment, please modify BoostDIR in cmakelists.txt to your version.
 
   ```
   cd ~/ros2_ws/src
-  git clone https://github.com/TixiaoShan/LIO-SAM.git
+  git clone https://github.com/asa-naki/LIO-SAM.git
   cd lio-sam
-  git checkout ros2
+  git checkout galactc-devel
   cd ..
   colcon build
   ```
+
 
 ## Prepare lidar data
 
